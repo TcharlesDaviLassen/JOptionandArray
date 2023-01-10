@@ -26,29 +26,38 @@ public class jav {
         int vl = Integer.parseInt(parcela);
         int parc[] = new int[vl + 1];
 
-        int prod = Integer.parseInt(produtoDeCompra);
+        double prod = Double.parseDouble(produtoDeCompra);
 
-        int prodVal = prod / vl;
+        double prodVal = prod / vl;
+        System.out.println("prov =>" + prodVal);
 
-        BigDecimal total = BigDecimal.ZERO;
+        if (prodVal % 2 == 0) {
 
-        for (int i = 1; i < parc.length; i++) {
-            if (total == BigDecimal.ZERO) {
-                System.out.println("Numero correto e aredondado em parcelas");
+            System.out.println("Numero correto e aredondado em parcelas");
 
-                System.out.println("Parcela nº " + i + " no valor de " + arredondar(prodVal + 1));
+            System.out.println("TOTAL => " + prodVal * vl);
 
-                System.out.println("total compra => " + prodVal * vl);
+        } else {
+
+            for (int i = 1; i < parc.length; i++) {
+
+                if (i != parc.length - 1) {
+                    System.out.println("Parcela nº " + i + " no valor de " + (arredondar(prodVal)));
+                } 
+                
+                    for (int j = 1; j <= vl; j++) {
+                        if (i == vl && j == vl) {
+                            System.out.println(
+                                    "Parcela nº " + i + " no valor de pagamento " + (arredondar(prodVal + (+0.01))));
+                            break;
+                        }
+                    }
+                
+
+                // System.out.println("total compra => " + (prod / vl) * vl);
+                // System.out.println("VALOPARCELA => " + arredondar(prodVal * vl));
             }
         }
-
-        // for (int i = 1; i < parc.length; i++) {
-
-        // System.out.println("Parcela nº " + i + " no valor de " +
-        // arredondar(prodVal));
-
-        // }
-
     }
 
     private static String arredondar(double media) {
@@ -62,14 +71,14 @@ public class jav {
 
     }
 
-    private static BigDecimal formatVal(double media) {
-        BigDecimal bd = new BigDecimal(media).setScale(2, RoundingMode.HALF_UP);
+    // private static BigDecimal formatVal(double media) {
+    // BigDecimal bd = new BigDecimal(media).setScale(2, RoundingMode.HALF_UP);
 
-        System.out.println(bd);
+    // System.out.println(bd);
 
-        return bd;
+    // return bd;
 
-    }
+    // }
 
     // public static void outputArray(int[][] array) {
     // // FAZ UM LOOP PELAS LINHAS DO ARRAY
