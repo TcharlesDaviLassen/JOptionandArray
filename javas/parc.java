@@ -23,11 +23,21 @@ public class parc {
         String NUMERO_PARCELAS = JOptionPane.showInputDialog(null, "Digíte o número de parcelas", "");
         Integer NUMEROPARCELAS = Integer.parseInt(NUMERO_PARCELAS);
 
-        String DATA_EMISSAO = JOptionPane.showInputDialog(null, "Qual é o dia do vencimento", "");
-        Integer DIA_EMISSAO = Integer.parseInt(DATA_EMISSAO);
-        Calendar DATAEMISSAO = null;
-        DATAEMISSAO = data;
-        DATAEMISSAO.add(Calendar.DAY_OF_MONTH, DIA_EMISSAO);
+        String DAY_EMISSAO = JOptionPane.showInputDialog(null, "Qual é o dia do vencimento", "");
+        Integer DIA_EMISSAO = Integer.parseInt(DAY_EMISSAO);
+        Calendar DATAEMISSAO = data;
+        DATAEMISSAO.set(Calendar.DAY_OF_MONTH, DIA_EMISSAO);
+
+        // String MONTH_EMISSAO = JOptionPane.showInputDialog(null, "Qual é o mês do vencimento", "");
+        // Integer MES_EMISSAO = Integer.parseInt(MONTH_EMISSAO);
+        // Calendar MESEMISSAO = null;
+        // MESEMISSAO.set(Calendar.DAY_OF_MONTH, MES_EMISSAO);
+
+        // String YEAR_EMISSAO = JOptionPane.showInputDialog(null, "Qual é o ano do vencimento", "");
+        // Integer ANO_EMISSAO = Integer.parseInt(YEAR_EMISSAO);
+        // Calendar ANOEMISSAO = null;
+        // ANOEMISSAO.set(Calendar.DAY_OF_MONTH, ANO_EMISSAO);
+        
         
         double montante = VALORTOTAL;
         int montanteEmCentavos = (int) (montante * 100);
