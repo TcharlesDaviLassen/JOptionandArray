@@ -55,7 +55,7 @@ public class jav {
                         String dado = val.substring(Math.max(0, val.length() - 2));
                         Double str = Double.parseDouble(dado);
 
-                        convertInt(str, parc.length);
+                        convertInt(str);
                
                     
 
@@ -99,7 +99,7 @@ public class jav {
     }
 
 
-    private static String convertInt(Double duplo, Integer length){
+    private static String convertInt(Double duplo){
         String sDouble = Double.toString(duplo); //Convertendo para String para retornar uma String adaptando ao seu contexto.
     
         StringBuilder doisUltimosCharacteres = new StringBuilder(); //StringBuilder representativo apenas para pegarmos os 2 últimos caracteres do valor recebido como parâmetro
@@ -108,14 +108,7 @@ public class jav {
         doisUltimosCharacteres.append(sDouble.charAt(sDouble.length() -1)); //... e concatena com o último para verificarmos se esses dois ultimos caracteres são '.0'
     
         if(doisUltimosCharacteres.toString().equals(".0")){ //Aqui validamos se os dois ultimos caracteres são '.0', se for, retornamos o valor como desejado  
-        String dadoBuilde = sDouble.substring(0, sDouble.length() -2);
-
-        for (int i = 0; i < length; i++) {
-
-           String sum = dadoBuilde;
-           Integer pars = Integer.parseInt(sum);
-           System.out.println("doisUltimosCharacteres =>"+ ((pars*length)));
-        }
+        System.out.println("doisUltimosCharacteres =>" + sDouble.substring(0, sDouble.length() -2));
         
             return sDouble.substring(0, sDouble.length() -2);
         }
