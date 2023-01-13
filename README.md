@@ -106,7 +106,7 @@ Algumas strings de formatação que podem ser utilizadas com o Decimal Format
 #
 #
 
-A classe
+A classe 
 # NumberFormat, 
 faz parte do pacote java.text e 
 # permite formatar números conforme a localização geográfica em que se encontra, 
