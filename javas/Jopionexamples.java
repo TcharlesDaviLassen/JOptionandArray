@@ -16,8 +16,9 @@ public class Jopionexamples {
 
         String digiteUmNumero = JOptionPane.showInputDialog(
                 "Digite qual modal quer que aparessa\n" +
-                "1 para modal MessageDialog\n" + 
-                "2 para modal InputDialog");
+                        "1 para modal showMessageDialog\n" +
+                        "2 para modal showInputDialog\n" +
+                        "3 para modal showConfirmDialog\n");
         Integer number = Integer.parseInt(digiteUmNumero);
 
         if (number == 1) {
@@ -33,9 +34,27 @@ public class Jopionexamples {
                     "Erro 404", // titulo da janela
                     JOptionPane.INFORMATION_MESSAGE);
 
-        } else {
-            
-            JOptionPane.showInputDialog(null, "Qual é o valor do produto de compra", "").toUpperCase();
+        } else if (number == 2) {
+
+            JOptionPane.showInputDialog(null, "Qual é o valor do produto de compra", "");
+
+        } else if (number == 3) {
+
+            // Cria um JFrame
+            JFrame frame = new JFrame("JOptionPane exemplo");
+
+            // Cria o JOptionPane por showMessageDialog
+            int resposta = JOptionPane.showConfirmDialog(frame, "escolha um", "escolha dois",
+                    JOptionPane.YES_NO_OPTION);
+            // verfica se a resposta é verdadeira
+            if (resposta == JOptionPane.YES_OPTION) {
+                JOptionPane.showMessageDialog(null, "Olá");
+            } else {
+                // JOptionPane.showMessageDialog(null, "Ops!!");
+                JOptionPane.showInternalMessageDialog(null, "OPS!!", "Input no clicado !", JOptionPane.INFORMATION_MESSAGE);
+              
+            }
+
         }
 
         System.exit(0);
