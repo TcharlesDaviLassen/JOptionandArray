@@ -34,6 +34,7 @@ public class Jopionexamples {
                     JOptionPane.INFORMATION_MESSAGE);
 
         } else {
+            
             JOptionPane.showInputDialog(null, "Qual é o valor do produto de compra", "").toUpperCase();
         }
 
