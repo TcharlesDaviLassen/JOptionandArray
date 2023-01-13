@@ -99,5 +99,8 @@ import java.text.DecimalFormat;
 
 Algumas strings de formatação que podem ser utilizadas com o Decimal Format
 
+![numberformat](https://user-images.githubusercontent.com/66473846/212350646-efbee791-7ab1-4362-9401-45753541a2c7.png)
+
+
 
 
