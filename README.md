@@ -106,7 +106,9 @@ Algumas strings de formatação que podem ser utilizadas com o Decimal Format
 #
 #
 
-A classe # NumberFormat, faz parte do pacote java.text e # permite formatar números conforme a localização geográfica em que se encontra, 
+A classe 
+# NumberFormat, faz parte do pacote java.text e 
+# permite formatar números conforme a localização geográfica em que se encontra, 
 realizando a distinção entre o sinal de ponto,milhar e de decimal, também identifica a posição do sinal do número e identifica o prefixo que indica a moeda em caso de valores monetários.
 
 NumberFormat possui três mêtodos para formatar números, valores monetários e percentuais. Para fazer uso dela é necessário importa-la.
