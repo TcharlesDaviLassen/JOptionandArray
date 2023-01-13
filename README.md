@@ -71,3 +71,33 @@ public class Testa_Metodos_Set_Get_Calendar{
 Listagem 4. Alterando a data/hora com método set
 
 #
+#
+
+# DecimalFormat
+
+Criar uma formatação personalizada utilizando o objeto DecimalFormat. Por exemplo:
+
+```ruby
+import java.text.DecimalFormat;
+ public class Formata {
+
+  public static void main(String[] args) {
+
+  double valor = 2000.0;
+  double vezes = 3.0;
+  double prestacao = valor/vezes;
+
+  DecimalFormat df = new DecimalFormat("0.##");
+  String dx = df.format(prestacao);
+
+  System.out.print(dx);
+
+  }
+  // sera impresso : 666,67
+ }
+ ```
+
+Algumas strings de formatação que podem ser utilizadas com o Decimal Format
+
+
+
