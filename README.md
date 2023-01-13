@@ -102,3 +102,56 @@ Algumas strings de formatação que podem ser utilizadas com o Decimal Format
 ![numberformat](https://user-images.githubusercontent.com/66473846/212350646-efbee791-7ab1-4362-9401-45753541a2c7.png)
 
 É importante lembrar que DecimalFormat não é adequada para formatar notações científica, tabelas com colunas de largura fixa e nem números em formato hexadecimal ou octal.
+
+#
+#
+
+A classe
+# NumberFormat, 
+faz parte do pacote java.text e 
+# permite formatar números conforme a localização geográfica em que se encontra, 
+realizando a distinção entre o sinal de ponto,milhar e de decimal, também identifica a posição do sinal do número e identifica o prefixo que indica a moeda em caso de valores monetários.
+
+NumberFormat possui três mêtodos para formatar números, valores monetários e percentuais. Para fazer uso dela é necessário importa-la.
+import java.text.NumberFormat;
+Os principais métodos do NumberFormat são:
+
+```ruby
+
+getNumberInstance() - Retorna a instância de um objeto com base no formato da localidade padrão. É utilizado para numeros
+getCurrencyInstance() - Usado para formatar moedas
+getIntegerInstance() - Usado para formatar números ignorando casas decimais
+getPercentInstance() - Usado para formatar frações pro exemplo 0,15 é formatado e mostrado como 15%
+```
+
+Exemplo:
+```ruby
+import java.text.NumberFormat;
+ public class Formata {
+  public static void main(String[] args) {
+
+  System.out.println(NumberFormat.getCurrencyInstance().format(12345678.90));
+  // imprimirÃ¡ R$ 12.345.678,90
+  }
+ }
+ ```
+Agora um exemplo para uma situação em que se há muitos números a serem formatados.
+
+```ruby
+import java.text.NumberFormat;
+ public class Formata2 {
+  public static void main(String[] args) {
+  double n[]={523.34, 54344.23 ,95845.223 ,1084.895};
+
+  NumberFormat z = NumberFormat.getCurrencyInstance();
+
+  for (int a = 0; a < n.length; a++) {
+  if(a != 0)
+  System.out.print(", ");
+  System.out.print(z.format(n[a]));
+  }
+  System.out.println();
+  }
+ }
+ ```
+

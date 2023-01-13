@@ -49,15 +49,13 @@ public class jav {
 
                     // String dd = (strProv.substring(Math.max(0, strProv.length() - 2)));
 
-                        System.out.println("Parcela nº " + i + " no valor de pagamento1" + arredondar(prodVal));
+                    System.out.println("Parcela nº " + i + " no valor de pagamento1" + arredondar(prodVal));
 
-                        String val = arredondar(prodVal);
-                        String dado = val.substring(Math.max(0, val.length() - 2));
-                        Double str = Double.parseDouble(dado);
+                    String val = arredondar(prodVal);
+                    String dado = val.substring(Math.max(0, val.length() - 2));
+                    Double str = Double.parseDouble(dado);
 
-                        convertInt(str);
-               
-                    
+                    convertInt(str);
 
                 }
 
@@ -98,22 +96,27 @@ public class jav {
         return s.substring(Math.max(0, s.length() - n));
     }
 
+    private static String convertInt(Double duplo) {
+        String sDouble = Double.toString(duplo); // Convertendo para String para retornar uma String adaptando ao seu
+                                                 // contexto.
 
-    private static String convertInt(Double duplo){
-        String sDouble = Double.toString(duplo); //Convertendo para String para retornar uma String adaptando ao seu contexto.
-    
-        StringBuilder doisUltimosCharacteres = new StringBuilder(); //StringBuilder representativo apenas para pegarmos os 2 últimos caracteres do valor recebido como parâmetro
-    
-        doisUltimosCharacteres.append(sDouble.charAt(sDouble.length() -2 )); //Pega o penultimo valor da String...
-        doisUltimosCharacteres.append(sDouble.charAt(sDouble.length() -1)); //... e concatena com o último para verificarmos se esses dois ultimos caracteres são '.0'
-    
-        if(doisUltimosCharacteres.toString().equals(".0")){ //Aqui validamos se os dois ultimos caracteres são '.0', se for, retornamos o valor como desejado  
-        System.out.println("doisUltimosCharacteres =>" + sDouble.substring(0, sDouble.length() -2));
-        
-            return sDouble.substring(0, sDouble.length() -2);
+        StringBuilder doisUltimosCharacteres = new StringBuilder(); // StringBuilder representativo apenas para pegarmos
+                                                                    // os 2 últimos caracteres do valor recebido como
+                                                                    // parâmetro
+
+        doisUltimosCharacteres.append(sDouble.charAt(sDouble.length() - 2)); // Pega o penultimo valor da String...
+        doisUltimosCharacteres.append(sDouble.charAt(sDouble.length() - 1)); // ... e concatena com o último para
+                                                                             // verificarmos se esses dois ultimos
+                                                                             // caracteres são '.0'
+
+        if (doisUltimosCharacteres.toString().equals(".0")) { // Aqui validamos se os dois ultimos caracteres são '.0',
+                                                              // se for, retornamos o valor como desejado
+            System.out.println("doisUltimosCharacteres =>" + sDouble.substring(0, sDouble.length() - 2));
+
+            return sDouble.substring(0, sDouble.length() - 2);
         }
-    
-        return sDouble; //retorna o valor enviado por parâmetro sem modificações.
+
+        return sDouble; // retorna o valor enviado por parâmetro sem modificações.
     }
 
     // private static BigDecimal formatVal(double media) {
